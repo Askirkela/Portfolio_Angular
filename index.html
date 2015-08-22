@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Luc Debene"/>
+		<meta name="description" content="Page personnelle de Luc Debene" />
+		<meta name="keywords" content="etudiant,student,homepage,computer" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="libjs/jquery.min.js"></script>
+		<script src="libjs/jquery.scrolly.min.js"></script>
+		<script src="libjs/jquery.dropotron.min.js"></script>
+		<script src="libjs/jquery.scrollex.min.js"></script>
+		<script src="libjs/skel.min.js"></script>
+		<script src="libjs/skel-layers.min.js"></script>
+		<script src="libjs/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<link rel="alternate" hreflang="fr" href="index.html">
+	</head>
+
+	<body class="landing" ng-app="portfolio">
+		<!-- Header -->
+		<header id="header">
+			<h1 id="logo"><a href="index.html">Luc Deb&egrave;ne</a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#one">Cursus</a></li>
+					<li><a href="#two">Exp&eacute;riences</a></li>
+					<li><a href="#three">Projets</a></li>
+					<li><a href="#four">Loisirs</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<section id="banner">
+			<div class="content" ng-controller="headerController">
+				<header>
+					<h2>{{ author }}</h2>
+					<p><br /></p>
+				</header>
+				<span class="image"><img src="imgs/ld.jpg" alt="" /></span>
+				<p>{{ descr }}</p>
+				<center><p><a href="{{ cv_src }}">Télécharger mon CV</a></p></center>
+			</div>
+		</section>
+		
+		<section id="one" class="wrapper style1 special fade-up">
+			<div class="content" ng-controller="formationController">
+				<header class="major">
+					<h2>Formation</h2>
+				</header>
+				<div class="container" ng-repeat="form in formations">
+					<div class="row">
+						<div class="10u 12u$(medium)">
+							<h3>{{ form.name }}</h3>
+							<p style="font-style:italic;">{{ form.descr }}</p>
+							<p>{{ form.location }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="two" class="wrapper style1 special fade-up">
+			<div class="container" ng-controller="expController">
+				<header class="major">
+					<h2>Exp&eacute;riences</h2>
+				</header>
+				<div class="box alt">
+					<div class="row uniform">
+						<section class="4u 6u(medium) 12u$(xsmall)" ng-repeat="exp in exps">
+							<h5>{{ exp.title }}</h5>
+							<h6>{{ exp.date }}</h6>
+							<p ng-bind-html="exp.descr"></p>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="three" class="wrapper style1 special fade-up">
+			<div class="container" ng-controller="projectsController">
+				<header class="major">
+					<h2>Projets</h2>
+				</header>
+				<div class="box alt">
+					<div class="row uniform">
+						<section class="4u 6u(medium) 12u$(xsmall)" ng-repeat="project in projects">
+							<h5>{{ project.name }}</h5>
+							<h6>{{ project.when }}</h6>
+							<p ng-bind-html="project.descr"></p>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="four" class="wrapper style1 special fade-up">
+			<div class="container" ng-controller="freeTimeController">
+				<header class="major">
+					<h2>Loisirs</h2>
+				</header>
+				<div class="box alt">
+					<div class="row uniform">
+						<section class="4u 6u(medium) 12u$(xsmall)" ng-repeat="stuff in stuffs">
+							<h5>{{ stuff.title }}</h5>
+							<p ng-bind-html="stuff.descr"></p>
+						</section>
+						<div class="2u 12u$(xsmall)"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="five" class="wrapper style1 special fade">
+			<h3>Contactez-moi</h3>
+			<form method="post" action="MAILTO:ldebene@gmail.com" enctype="text/plain">
+				<div class="row uniform 50%">
+					<div class="2u 12u$(xsmall)"></div>
+					<div class="4u 12u$(xsmall)">
+						<input type="text" name="name" id="name" value="" placeholder="Name" />
+					</div>
+					<div class="4u$ 12u$(xsmall)">
+						<input type="email" name="email" id="email" value="" placeholder="Email" />
+					</div>
+					<div class="2u 12u$(xsmall)"></div>
+					<div class="12u$ 12u$(medium)">
+						<input type="checkbox" id="human" name="human" unchecked>
+						<label for="human">Do you think you can fool me, robot?!</label>
+					</div>
+					<div class="12u$">
+						<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+					</div>
+					<div class="12u$">
+						<ul class="actions">
+							<li><input type="submit" value="Envoyer" class="special" /></li>
+							<li><input type="reset" value="Effacer" /></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/pub/luc-deb%C3%A8ne/20/8b/170" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+				<li><a href="http://github.com/askirkela" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Luc Deb&egrave;ne. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</footer>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="Controller/HeaderController.js"></script>
+    <script src="Controller/FormationController.js"></script>
+    <script src="Controller/ExpController.js"></script>
+    <script src="Controller/ProjectsController.js"></script>
+    <script src="Controller/FreeTimeController.js"></script>
+	</body>
+</html>
