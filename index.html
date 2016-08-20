@@ -40,18 +40,18 @@
 		</header>
 		
 		<section id="banner">
-			<div class="content" ng-controller="headerController">
+			<div class="content">
 				<header>
-					<h2>{{ author }}</h2>
+					<h2>Luc Deb&egrave;ne</h2>
 					<p><br /></p>
 				</header>
-				<span class="image"><img src="imgs/ld.jpg" alt="" /></span>
-				<p>{{ descr }}</p>
-				<center><p><a href="{{ cv_src }}">Télécharger mon CV</a></p></center>
+				<span class="image"><img src="imgs/ld.jpg" alt="Luc Deb&egrave;ne" /></span>
+				<p>Etudiant en informatique, passionné de littérature fantastique, de jeux de rôles, de jeux vidéo...</p>
+				<center><p><a href="docs/CV_LucDebene.pdf">Télécharger mon CV</a></p></center>
 			</div>
 		</section>
 		
-		<section id="one" class="wrapper style1 special fade-up">
+		<section id="one" class="spotlight style1 bottom">
 			<div class="content" ng-controller="formationController">
 				<header class="major">
 					<h2>Formation</h2>
@@ -60,8 +60,7 @@
 					<div class="row">
 						<div class="10u 12u$(medium)">
 							<h3>{{ form.name }}</h3>
-							<p style="font-style:italic;">{{ form.descr }}</p>
-							<p>{{ form.location }}</p>
+							<p> <i>{{ form.descr }}</i> {{ form.location }}</p>
 						</div>
 					</div>
 				</div>

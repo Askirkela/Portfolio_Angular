@@ -1,6 +1,11 @@
 app.controller("expController", ['$scope', function($scope) {
 	$scope.exps = [
 		{
+			title: "Ingénieur étude et développement",
+			date: "Novemnbre 2015 - Juin 2016",
+			descr: "Maintenance d'un site de réservation de séjours (J2EE, HTML5/CSS3, Tomcat)"
+		},
+		{
 			title: "Stage qualité logicielle",
 			date: "Mars-Août 2014",
 			descr: "Stage réalisé chez " + "ADULLACT".link("http://www.adullact.org") + "<br />Mise à jour et création de tests unitaires (JUnit/PHPUnit)<br />Etude et mise en place d'outils et d'un processus de qualité logicielle (Jenkins et outils associés)<br />Rédaction de documentations destinées à un usage rapide des outils<br />["+ "Rapport".link("docs/SQA.pdf") +"] " + "Diapos".link("docs/SQA_diapos.pdf") +"]"

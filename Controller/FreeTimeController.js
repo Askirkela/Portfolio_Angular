@@ -17,6 +17,14 @@ app.controller("freeTimeController", ['$scope', function($scope) {
 					"NightDev".link("http://www.nightdev.com") + 
 					"<br />" +
 					'<img class="img" src="imgs/Followers.png" alt="Followers" title="Followers"><img class="img" src="imgs/Subs.png" alt="Subscribers" title="Subscribers"><img class="img" src="imgs/Donations.png" alt="Donations" title="Donations">'
+		},
+		{
+			title: "When did I follow?",
+			descr: "Site permettant d'obtenir des informations sur les \"follows\" et \"followers\" d'un compte " + "Twitch.tv".link("http://www.twitch.tv/") +
+					"<br />" +
+					"Appels à l'API Twitch et traitement des données reçues" +
+					"<br />" +
+					"Lien vers le site".link("http://www.whendidifollow.esy.es/")
 		}
 	]
 }]);
